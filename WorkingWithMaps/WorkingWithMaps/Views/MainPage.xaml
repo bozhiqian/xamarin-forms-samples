@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:views="clr-namespace:WorkingWithMaps.Views;assembly=WorkingWithMaps"
+            x:Class="WorkingWithMaps.Views.MainPage"
+            Title="{Binding Title}"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:vm="clr-namespace:WorkingWithMaps.ViewModels;assembly=WorkingWithMaps"
+            mc:Ignorable="d"
+            d:DataContext="{d:DesignInstance Type=vm:MainPageViewModel,IsDesignTimeCreatable=False}">
+    <TabbedPage.Children>
+        <views:MapPage Title="{Binding Title}" Icon="glyphish_74_location.png"/>
+        <views:PinPage Title = "{Binding Title}" Icon="glyphish_07_map_marker.png"/>
+        <views:GeocoderPage Title="{Binding Title}" Icon = "glyphish_13_target.png" />
+        <views:MapAppPage Title="{Binding Title}" Icon= "glyphish_103_map.png" />
+        <views:CustomMapPage Title="{Binding Title}" Icon= "glyphish_74_location.png" />
+    </TabbedPage.Children>
+
+
+</TabbedPage>

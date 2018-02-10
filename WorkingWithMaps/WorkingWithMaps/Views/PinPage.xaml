@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="WorkingWithMaps.Views.PinPage"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:WorkingWithMaps.ViewModels;assembly=WorkingWithMaps"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:PinPageViewModel,IsDesignTimeCreatable=False}">
+    <StackLayout Spacing="0">
+        <Label Text="{Binding Title}" />
+        <maps:Map x:Name="GoogleMap" IsShowingUser="True" HeightRequest="100" WidthRequest="960" VerticalOptions="FillAndExpand"/>
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="morePins" Text="Add more pins" Command="{Binding AddMorePinsCommand}"/>
+            <Button x:Name="reLocate" Text="Re-center" Command="{Binding RelocateCommand}"></Button>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

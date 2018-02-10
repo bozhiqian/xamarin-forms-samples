@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="WorkingWithMaps.Views.MapPage"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:WorkingWithMaps.ViewModels;assembly=WorkingWithMaps"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:MapPageViewModel,IsDesignTimeCreatable=False}">
+    <StackLayout Spacing="0">
+        <Label Text="{Binding Title}" />
+        <maps:Map x:Name="GoogleMap" HeightRequest="100" WidthRequest="960" VerticalOptions="FillAndExpand" MapType="{Binding MapType, Mode=TwoWay}"/>
+        <Slider Maximum="18" Minimum="1" Value="{Binding SliderValue, Mode=TwoWay}" />
+        <StackLayout Spacing="30" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+            <Button x:Name="Street" Text="Street" Command="{Binding StreetCommand}"/>
+            <Button x:Name="Hybrid" Text="Hybrid" Command="{Binding HybridCommand}"/>
+            <Button x:Name="Satellite" Text="Satellite" Command="{Binding SatelliteCommand}"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

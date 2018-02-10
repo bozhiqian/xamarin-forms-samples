@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="WorkingWithMaps.Views.MapAppPage"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:WorkingWithMaps.ViewModels;assembly=WorkingWithMaps"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:MapAppPageViewModel,IsDesignTimeCreatable=False}">
+    <StackLayout Spacing="0">
+        <Label Text="{Binding Title}" />
+        <StackLayout Padding="5,20,5,0" HorizontalOptions="Fill">
+            <Label Text="These buttons leave the current app and open the built-in Maps app for the platform" />
+            <Button x:Name="openLocation" Text="Open location using built-in Maps app" Command="{Binding OpenLocationCommand}" />
+            <Button x:Name="openDirections" Text="Get directions using built-in Maps app" Command="{Binding OpenDirectionsCommand}" />
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
