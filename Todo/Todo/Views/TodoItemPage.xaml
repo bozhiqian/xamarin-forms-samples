@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Todo.Views.TodoItemPage"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Todo.ViewModels;assembly=Todo"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:TodoItemPageViewModel,IsDesignTimeCreatable=False}">
+    <StackLayout Margin="20" VerticalOptions="StartAndExpand">
+        <Label Text="Name" />
+        <Entry Text="{Binding TodoItem.Name, Mode=TwoWay}" />
+        <Label Text="Notes" />
+        <Entry Text="{Binding TodoItem.Notes, Mode=TwoWay}" />
+        <Label Text="Done" />
+        <Switch IsToggled="{Binding TodoItem.Done, Mode=TwoWay}" />
+        <Button Text="Save" Command="{Binding SaveCommand}" />
+        <Button Text="Delete" Command="{Binding DeleteCommand}"/>
+        <Button Text="Cancel" Command="{Binding CancelCommand}"/>
+        <Button Text="Speak" Command="{Binding SpeakCommand}" />
+    </StackLayout>
+</ContentPage>
