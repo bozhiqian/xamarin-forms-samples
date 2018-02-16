@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:markupExtensions="clr-namespace:WorkingWithImages.MarkupExtensions;assembly=WorkingWithImages"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Icon="xaml.png"
+             x:Class="WorkingWithImages.Views.EmbeddedImagesPage"
+             Title="{Binding Title}">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 20, 0, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Label Text="Image Resource Xaml" />
+        <!-- uses a custom Extension defined in this project for now -->
+        <Image Source="{markupExtensions:ImageResource WorkingWithImages.Images.beach.jpg}" />
+
+        <Label Text="WorkingWithImages.Images.beach.jpg embedded resource" />
+    </StackLayout>
+</ContentPage>
