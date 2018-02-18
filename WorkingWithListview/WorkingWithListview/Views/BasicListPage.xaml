@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="WorkingWithListview.Views.BasicListPage"
+             Icon="xaml.png"
+             Title="{Binding Title}"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:WorkingWithListview.ViewModels;assembly=WorkingWithListview"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:BasicListPageViewModel,IsDesignTimeCreatable=False}">
+    <ListView x:Name="listView" ItemsSource="{Binding Lists}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Padding="15, 5, 5, 5" HorizontalOptions="StartAndExpand" Orientation="Vertical">
+                        <Label Text="{Binding Name}" VerticalTextAlignment="Center" FontSize="Small" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

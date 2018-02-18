@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="WorkingWithListview.Views.ContextActionsPage"
+             x:Name="Root"
+             Icon="xaml.png"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:WorkingWithListview.ViewModels;assembly=WorkingWithListview"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:ContextActionsPageViewModel,IsDesignTimeCreatable=False}">
+    <ListView x:Name="listView" ItemsSource="{Binding Lists}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell x:Name="PropertyCell">
+                    <!--<ViewCell.ContextActions>
+                        <MenuItem Command="{Binding OnMoreCommand}" Text="More" />
+                        <MenuItem Command="{Binding OnDeleteCommand}" Text="Delete" IsDestructive="True" />
+                    </ViewCell.ContextActions>-->
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                        <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                            <Label Text="{Binding .}" FontSize="Medium" />
+                            <Label Text="hint: trigger a context action" FontSize="Small" />
+                        </StackLayout>
+                        <!--https://forums.xamarin.com/discussion/comment/144204#Comment_144204-->
+                        <Button  BindingContext="{Binding Source={x:Reference Root}, Path=BindingContext}"
+                            Command="{Binding OnMoreCommand}" CommandParameter="{Binding Source={x:Reference PropertyCell}, Path=BindingContext}" Text="More" />
+                        <Button Command="{Binding OnDeleteCommand}" CommandParameter="{Binding Source={x:Reference PropertyCell}, Path=BindingContext}" Text="Delete" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

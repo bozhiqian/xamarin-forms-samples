@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="WorkingWithListview.Views.CustomCellPage"
+             x:Name="Root"
+             Icon="xaml.png"
+             Title="{Binding Title}"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:WorkingWithListview.ViewModels;assembly=WorkingWithListview"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:CustomCellPageViewModel,IsDesignTimeCreatable=False}">
+    <ListView x:Name="listView" ItemsSource="{Binding Lists}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell x:Name="PropertyCell">
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                        <StackLayout Padding="5,0,100,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                            <Label Text="{Binding .}" VerticalTextAlignment="Center" FontSize="Medium" />
+                            <Label Text="Label 2" VerticalTextAlignment="Center" FontSize="Small" />
+                        </StackLayout>
+                        <Button Text="X" BackgroundColor="Gray" HorizontalOptions="EndAndExpand" 
+                                BindingContext="{Binding Source={x:Reference Root}, Path=BindingContext}"
+                                Command="{Binding CellClickCommand}" CommandParameter="{Binding Source={x:Reference PropertyCell}, Path=BindingContext}" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
