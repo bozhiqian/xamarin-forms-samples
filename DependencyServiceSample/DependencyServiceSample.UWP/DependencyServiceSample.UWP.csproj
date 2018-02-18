@@ -93,6 +93,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DependencyService\BatteryImplementation.cs" />
+    <Compile Include="DependencyService\DeviceOrientationImplementation.cs" />
+    <Compile Include="DependencyService\PicturePickerImplementation.cs" />
+    <Compile Include="DependencyService\TextToSpeech.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

@@ -1,4 +1,6 @@
-﻿using Foundation;
+﻿using DependencyServiceSample.DependencyService;
+using DependencyServiceSample.iOS.DependencyService;
+using Foundation;
 using Prism;
 using Prism.Ioc;
 using UIKit;
@@ -32,7 +34,11 @@ namespace DependencyServiceSample.iOS
     {
         public void RegisterTypes(IContainerRegistry container)
         {
-
+            // Register any platform specific implementations
+            container.Register<IBattery, BatteryImplementation>();
+            container.Register<IPicturePicker, PicturePickerImplementation>();
+            container.Register<IPicturePicker, PicturePickerImplementation>();
+            container.Register<ITextToSpeech, TextToSpeechImplementation>();
         }
     }
 }

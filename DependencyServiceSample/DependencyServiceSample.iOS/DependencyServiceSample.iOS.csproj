@@ -88,6 +88,10 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DependencyService\BatteryImplementation.cs" />
+    <Compile Include="DependencyService\DeviceOrientationImplementation.cs" />
+    <Compile Include="DependencyService\PicturePickerImplementation.cs" />
+    <Compile Include="DependencyService\TextToSpeech_iOS.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -130,8 +134,6 @@
       <Name>DependencyServiceSample</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DependencyService\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

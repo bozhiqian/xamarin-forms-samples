@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using DependencyServiceSample.DependencyService;
+using DependencyServiceSample.UWP.DependencyService;
 
 namespace DependencyServiceSample.UWP
 {
@@ -31,7 +33,11 @@ namespace DependencyServiceSample.UWP
     {
         public void RegisterTypes(IContainerRegistry container)
         {
-
+            // Register any platform specific implementations
+            container.Register<IBattery, BatteryImplementation>();
+            container.Register<IPicturePicker, PicturePickerImplementation>();
+            container.Register<IPicturePicker, PicturePickerImplementation>();
+            container.Register<ITextToSpeech, TextToSpeechImplementation>();
         }
     }
 }
