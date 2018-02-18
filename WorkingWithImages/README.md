@@ -3,6 +3,11 @@ Working with Images
 
 This sample relates to the [Working with Images in Xamarin.Forms](http://developer.xamarin.com/guides/cross-platform/xamarin-forms/working-with/images) but I rewrite with prism libary with appropriate updates to remove all code behind into view model. I removed all UI element written in code behind and replicate them in XAML.   
 
+Author
+------
+
+Bozhi Qian
+
 License
 -------
 

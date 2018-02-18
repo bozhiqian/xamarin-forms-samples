@@ -3,6 +3,11 @@ Xamarin.Forms ListView Sample: Interactivity
 
 This sample relates to the [ListView Docs](https://developer.xamarin.com/guides/xamarin-forms/user-interface/listview/) but I rewrite with prism libary with appropriate updates to remove all code behind into view model. I removed all UI element written in code behind and replicate them in XAML.   
 
+Author
+------
+
+Bozhi Qian
+
 License
 -------
 

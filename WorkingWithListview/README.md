@@ -9,6 +9,11 @@ This sample relates to the [Working with ListView in Xamarin.Forms](http://devel
 ![Screenshots](Screenshots/WorkingWithListview4.png)
 ![Screenshots](Screenshots/WorkingWithListview5.png)
 
+Author
+------
+
+Bozhi Qian
+
 License
 -------
 
