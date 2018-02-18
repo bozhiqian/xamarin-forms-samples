@@ -27,7 +27,8 @@
                         <!--https://forums.xamarin.com/discussion/comment/144204#Comment_144204-->
                         <Button  BindingContext="{Binding Source={x:Reference Root}, Path=BindingContext}"
                             Command="{Binding OnMoreCommand}" CommandParameter="{Binding Source={x:Reference PropertyCell}, Path=BindingContext}" Text="More" />
-                        <Button Command="{Binding OnDeleteCommand}" CommandParameter="{Binding Source={x:Reference PropertyCell}, Path=BindingContext}" Text="Delete" />
+                        <Button BindingContext="{Binding Source={x:Reference Root}, Path=BindingContext}"
+                            Command="{Binding OnDeleteCommand}" CommandParameter="{Binding Source={x:Reference PropertyCell}, Path=BindingContext}" Text="Delete" />
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
