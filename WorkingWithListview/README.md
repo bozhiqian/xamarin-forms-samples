@@ -1,4 +1,4 @@
-Working with Images
+Working with ListView
 =====================
 
 This sample relates to the [Working with ListView in Xamarin.Forms](http://developer.xamarin.com/guides/cross-platform/xamarin-forms/working-with/listview) but I rewrite with prism libary with appropriate updates to remove all code behind into view model. I removed all UI element written in code behind and replicate them in XAML.   

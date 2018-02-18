@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UsingMessagingCenter.Views.MainPage"
+             Title="{Binding Title}"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:UsingMessagingCenter.ViewModels;assembly=UsingMessagingCenter"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:MainPageViewModel,IsDesignTimeCreatable=False}">
+    <StackLayout Padding="0, 20, 0, 0">
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label Text="Welcome to Xamarin Forms and Prism!" />
+        </StackLayout>
+        <Button Text="Say Hi" Command="{Binding Button1Command}" />
+        <Button Text="Say Hi to John" Command="{Binding Button2Command}" />
+        <Button Text="Unsubscribe from alert" Command="{Binding Button3Command}" />
+
+        <ListView x:Name="listView" ItemsSource="{Binding Greetings}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell x:Name="PropertyCell">
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                            <StackLayout Padding="5,0,100,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                                <Label Text="{Binding .}" VerticalTextAlignment="Center" FontSize="Medium" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>
