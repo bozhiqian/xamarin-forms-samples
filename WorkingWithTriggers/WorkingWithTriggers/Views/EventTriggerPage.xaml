@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:triggerActions="clr-namespace:WorkingWithTriggers.TriggerActions;assembly=WorkingWithTriggers"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Title="{Binding Title}"
+             x:Class="WorkingWithTriggers.Views.EventTriggerPage">
+    <StackLayout>
+
+        <Label FontSize="Large" Text="EventTrigger Example" />
+        <Label Text="Text must be a valid double or it will turn red." />
+
+        <Entry Placeholder="Enter a System.Double">
+            <Entry.Triggers>
+                <EventTrigger Event="TextChanged">
+                    <triggerActions:NumericValidationTriggerAction />
+                </EventTrigger>
+            </Entry.Triggers>
+        </Entry>
+
+    </StackLayout>
+</ContentPage>
