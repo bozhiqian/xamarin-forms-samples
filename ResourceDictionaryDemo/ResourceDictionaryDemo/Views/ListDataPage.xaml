@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:ResourceDictionaryDemo;assembly=ResourceDictionaryDemo"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ResourceDictionaryDemo.Views.ListDataPage"
+             Title="{Binding Title}"
+             BackgroundColor="{StaticResource PageBackgroundColor}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <local:MyResourceDictionary />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout Margin="0,20,0,0">
+        <Label Text="ResourceDictionary Demo" Style="{StaticResource LabelPageHeadingStyle}" />
+        <ListView x:Name="listView" ItemsSource="{Binding Lists}"
+                  ItemTemplate="{StaticResource PersonDataTemplate}" Margin="10,20,10,0" BackgroundColor="{StaticResource PageBackgroundColor}" />
+    </StackLayout>
+</ContentPage>
